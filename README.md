@@ -1,60 +1,37 @@
-# p5.js Template
+# ReadMe - HW04B Working Document
 
-This is a README file that can be used to describe and document your assignment.
+This code is used to execute a user-interactive canvas for drawing shapes. The canvas size is set to the viewport size.
 
-Markdown Cheatsheet (from [https://www.markdownguide.org/cheat-sheet/](https://www.markdownguide.org/cheat-sheet/)):
+This was relatively a much easier assignment to implement, as compared to the "Keeping Track of Time" one. I already had a firm idea as to what I would be doing for this, and what all functionalities I'll be including for the interactivity.
 
----
----
+The project starts off with a white canvas, with instructions overlaid. The code generates two types of shapes: *ellipses* and *rectangles*, but with varying dimensions and color.
 
-# Heading1
-## Heading2
-### Heading3
-#### Heading4
-##### Heading5
-###### Heading6
+The functionalities are:
 
-**bold text**
+**1. if (user moves the mouse)**
+* generate ellipses of random proportions, and in different shades of red
+* or if (user keeps the *s* key pressed)
+  - generate rectangles of random proportions, and in different shades of yellow
 
-*italicized text*
+**2. else if (user click & drags the mouse)**
+* generate ellipses of random proportions, and in different shades of green
+* if (user keeps the *s* key pressed)
+  - generate rectangles of random proportions, and in different shades of blue
 
-~~strikethrough text~~
+**3. if (user presses the *x* key)**
+* stop drawing on canvas
 
-Ordered List:
-1. First item
-2. Second item
-3. Third item
+**4. if (user presses the *t* key)**
+* change the color of the canvas
 
-Unordered List:
-- First item
-- Second item
-- Third item
+**5. if (user presses the *p* key)**
+* save the page as an image
 
-`short code block`
+**6. if (user presses the *r* key)**
+* resets the canvas
 
-```
-extended code block
-fun() {
-  return 0
-}
-```
+The one thing I learnt while coding the above was that the mouse and/or keyboard functions are all independent of each other, in the sense, that they won't work if nested together. Similarly, I realized that the mouse/keyboard functionalities also have cetain reserved keywords, in addition to the normal functions. I've made use of those conepts to get the curser to generate rectangles instead of ellipses.
 
-Link:  
-[linked text](https://www.example.com)
+Additionally, I've made use of *random()* to make the shape dimensions different every single time, and to cycle between different shades of primary colors. The background color cycle functionality also makes use of *random()*, and I've set the limit accordingly to just generate pastel colors for better visibility.
 
-
-Image with url:  
-![image description](https://dm-gy-6063-2023f-d.github.io/assets/homework/02/clark-espaco-modulado-00.jpg)
-
-
-Image on repo:  
-![image description](./file-name.jpg)
-
-
-To start a new line, add two spaces at the end of a line, like this:  
-this is a new line.
-
-
-To start a new paragraph, leave an empty line between two lines of text.
-
-This is a new paragraph.
+Also, for the directions, I've combined all the text-layers into a single function which is then called every time *reset* or *color-cycle* is activated. This allowed me to keep the code clean, and not repeat the same stuff again and again.
