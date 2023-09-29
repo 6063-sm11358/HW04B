@@ -30,8 +30,8 @@ The functionalities are:
 **6. if (user presses the *r* key)**
 * resets the canvas
 
-The one thing I learnt while coding the above was that the mouse and/or keyboard functions are all independent of each other, in the sense, that they won't work if nested together. Similarly, I realized that the mouse/keyboard functionalities also have cetain reserved keywords, in addition to the normal functions. I've made use of those conepts to get the curser to generate rectangles instead of ellipses.
+The one thing I learnt while coding the above was that the mouse and/or keyboard functions are all independent of each other, in the sense, that they won't work if nested together. Similarly, I realized that the mouse/keyboard functionalities also have cetain reserved keywords, in addition to the normal functions. I've made use of those concepts to get the curser to generate rectangles instead of ellipses.
 
-Additionally, I've made use of *random()* to make the shape dimensions different every single time, and to cycle between different shades of primary colors. The background color cycle functionality also makes use of *random()*, and I've set the limit accordingly to just generate pastel colors for better visibility.
+Additionally, I've made use of *random()* to make the shape dimensions different every single time, and to cycle between different shades of primary colors. The background color cycle functionality also makes use of *random()*, and I've set the range accordingly to just generate pastel colors for better visibility.
 
 Also, for the directions, I've combined all the text-layers into a single function which is then called every time *reset* or *color-cycle* is activated. This allowed me to keep the code clean, and not repeat the same stuff again and again.
