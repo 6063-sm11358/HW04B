@@ -35,3 +35,7 @@ The one thing I learnt while coding the above was that the mouse and/or keyboard
 Additionally, I've made use of *random()* to make the shape dimensions different every single time, and to cycle between different shades of primary colors. The background color cycle functionality also makes use of *random()*, and I've set the range accordingly to just generate pastel colors for better visibility.
 
 Also, for the directions, I've combined all the text-layers into a single function which is then called every time *reset* or *color-cycle* is activated. This allowed me to keep the code clean, and not repeat the same stuff again and again.
+
+An Example:
+
+<img src = './MyDrawing.jpg'>
