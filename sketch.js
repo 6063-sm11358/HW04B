@@ -11,9 +11,10 @@ function drawInstructions()
   text('> click & move mouse: green ellipses', width/8, height/2.07);
   text('> key "s" + click & move mouse: blue rectangles', width/8, height/1.88);
   text('> key "x": stop drawing', width/8, height/1.72);
-  text('> key "t": cycle canvas color', width/8, height/1.58);
-  text('> key "p": print your masterpiece', width/8, height/1.46);
-  text('> key "r": reset canvas', width/8, height/1.36);
+  text('> any key: start drawing again', width/8, height/1.59);
+  text('> key "t": cycle canvas color', width/8, height/1.48);
+  text('> key "p": print your masterpiece', width/8, height/1.39);
+  text('> key "r": reset canvas', width/8, height/1.31);
 }
 
 function setup() {
@@ -74,7 +75,4 @@ function keyPressed()
     background(int(random(150,256)),int(random(150,256)),int(random(150,256)));
     drawInstructions();
   }
-}
-
-function draw() {
 }
