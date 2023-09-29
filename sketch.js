@@ -1,22 +1,61 @@
+function drawInstructions()
+{
+  fill(0);
+  textSize(32);
+  text('hello, welcome to my interactive drawing canvas', width/8, height/4);
+  textSize(24);
+  text('DIRECTIONS:', width/8, height/3);
+  textSize(20);
+  text('> move mouse: red ellipses', width/8, height/2.58);
+  text('> key "s" + move mouse: yellow rectangles', width/8, height/2.3);
+  text('> click & move mouse: green ellipses', width/8, height/2.07);
+  text('> key "s" + click & move mouse: blue rectangles', width/8, height/1.88);
+  text('> key "x": stop drawing', width/8, height/1.72);
+  text('> key "t": cycle canvas color', width/8, height/1.58);
+  text('> key "p": print your masterpiece', width/8, height/1.46);
+  text('> key "r": reset canvas', width/8, height/1.36);
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
+  drawInstructions();
 }
 
 function mouseMoved()
 {
-  fill(int(random(100,256)),0,0);
-  ellipse(mouseX,mouseY, int(random(100,200)), int(random(100,200)));
   if(key=='s' && keyIsPressed)
   {
-    rect(mouseX, mouseY, int(random(100,200)), int(random(100,200)));
+    fill(int(random(200,256)),int(random(200,256)),0);
+    rect(mouseX, mouseY, int(random(0,200)), int(random(0,200)));
+  }
+  else if(key=='x')
+  {
+
+  }
+  else
+  {
+    fill(int(random(100,256)),0,0);
+    ellipse(mouseX,mouseY, int(random(100,200)), int(random(100,200)));
   }
 }
 
 function mouseDragged()
 {
-  fill(0,int(random(100,256)),0);
-  ellipse(mouseX,mouseY, int(random(100,200)), int(random(100,200)));
+  if(key=='s' && keyIsPressed)
+  {
+    fill(0,0,int(random(0,256)));
+    rect(mouseX, mouseY, int(random(0,200)), int(random(0,200)));
+  }
+  else if(key=='x')
+  {
+
+  }
+  else
+  {
+    fill(0,int(random(100,256)),0);
+    ellipse(mouseX,mouseY, int(random(100,200)), int(random(100,200)));
+  }
 }
 
 function keyPressed()
@@ -24,6 +63,16 @@ function keyPressed()
   if(key=='r')
   {
     background(255);
+    drawInstructions();
+  }
+  if(key=='p')
+  {
+    saveCanvas('MyDrawing','jpg');
+  }
+  if(key=='t')
+  {
+    background(int(random(150,256)),int(random(150,256)),int(random(150,256)));
+    drawInstructions();
   }
 }
 
